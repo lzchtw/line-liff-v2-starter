@@ -186,7 +186,9 @@ function registerButtonHandlers() {
 
     // get DecodedIDToken call
     document.getElementById('getDecodedIDTokenButton').addEventListener('click', function() {
-        document.getElementById('userIdProfileField').textContent = liff.getDecodedIDToken();
+        jsonStrDecodeIdToken = JSON.stringify(liff.getDecodedIDToken());
+        document.getElementById('strDecodedIDToken').textContent = jsonStrDecodeIdToken;
+        toggleDecodedIDTokenData();
     });    
     
     // login call, only when external browser is used
