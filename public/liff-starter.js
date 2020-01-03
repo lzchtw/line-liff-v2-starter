@@ -184,6 +184,11 @@ function registerButtonHandlers() {
         });
     });
 
+    // get DecodedIDToken call
+    document.getElementById('getDecodedIDTokenButton').addEventListener('click', function() {
+        document.getElementById('userIdProfileField').textContent = liff.getDecodedIDToken();
+    });    
+    
     // login call, only when external browser is used
     document.getElementById('liffLoginButton').addEventListener('click', function() {
         if (!liff.isLoggedIn()) {
@@ -220,6 +225,13 @@ function toggleAccessToken() {
 */
 function toggleProfileData() {
     toggleElement('profileInfo');
+}
+
+/**
+* Toggle decodedIDToken info field
+*/
+function toggleDecodedIDTokenData() {
+    toggleElement('decodedIDToken');
 }
 
 /**
