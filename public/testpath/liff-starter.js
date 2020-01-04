@@ -184,13 +184,18 @@ function registerButtonHandlers() {
         });
     });
 
-    // get DecodedIDToken call
-    document.getElementById('getDecodedIDTokenButton').addEventListener('click', function() {
+    // display DecodedIDToken call
+    document.getElementById('displayDecodedIDTokenButton').addEventListener('click', function() {
         jsonStrDecodeIdToken = JSON.stringify(liff.getDecodedIDToken());
         document.getElementById('strDecodedIDToken').textContent = jsonStrDecodeIdToken;
         toggleDecodedIDTokenData();
-    });    
-    
+    });
+
+    // alert DecodedIDToken call
+    document.getElementById('alertDecodedIDTokenButton').addEventListener('click', function() {
+        alert(JSON.stringify(liff.getDecodedIDToken()));
+    });
+
     // login call, only when external browser is used
     document.getElementById('liffLoginButton').addEventListener('click', function() {
         if (!liff.isLoggedIn()) {
